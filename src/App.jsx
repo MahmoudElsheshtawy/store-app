@@ -1,10 +1,20 @@
-
+import { BrowserRouter as Router ,Route ,Routes } from 'react-router-dom';
+import Header from './components/Header';
+import Home from './pages/Home';
+import ProductDetails from './pages/ProductDetails';
 
 const App = () => {
   return <>
-  <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+<div className='overflow-hidden'>
+  <Home/>
+  <ProductDetails/>
+ 
+
+
+
+
+
+</div>
   </>
 }
 
