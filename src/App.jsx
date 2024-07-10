@@ -6,9 +6,15 @@ import ProductDetails from './pages/ProductDetails';
 const App = () => {
   return <>
 <div className='overflow-hidden'>
-  <Home/>
-  <ProductDetails/>
- 
+  
+ <Router>
+  <Routes>
+    <Route path='/' element={<Home />} />
+    <Route path='/product/:id' element={<ProductDetails />} />
+  </Routes>
+
+
+ </Router>
 
 
 
