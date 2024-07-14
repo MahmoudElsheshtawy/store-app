@@ -12,5 +12,5 @@ root.render(
         <App />
       </React.StrictMode>
     </ProductProvider>
-  </SidebarProvider>
+   </SidebarProvider>
 );
