@@ -4,7 +4,7 @@ import Product from "../components/Product";
 const Home = () => {
   const { products } = useContext(ProductContext);
 
-  console.log(products);
+  // console.log(products);
 
   return (
     <>

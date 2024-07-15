@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
 
 export const SidebarContext = createContext()
+// eslint-disable-next-line react/prop-types
 const SidebarProvider = ({children}) => {
 // side bar staet
 

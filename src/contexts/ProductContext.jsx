@@ -12,7 +12,7 @@ const ProductProvider = ({ children }) => {
 
       const data = await response.json();
       setProducts(data);
-      console.log(data);
+      // console.log(data);
     };
 
     fechProduct()

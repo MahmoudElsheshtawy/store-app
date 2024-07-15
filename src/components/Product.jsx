@@ -1,10 +1,12 @@
 // import { Link } from "react-router-dom";
 import { BsPlus, BsEyeFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
-
+import { cartContext } from "../contexts/CartContext";
+import { useContext } from "react";
 // eslint-disable-next-line react/prop-types
 const Product = ({ product }) => {
-  console.log(product);
+
+  const {addToCart}= useContext(cartContext)
   // eslint-disable-next-line react/prop-types
   const { id, image, category, title, price } = product;
   return (
