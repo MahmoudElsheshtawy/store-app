@@ -7,28 +7,30 @@ const CartItem = ({ item }) => {
   return (
     <div className=" flex bg-slate-400 ">
       {/* img */}
-      <div className=" min-h-[150px] flex items-center bg-slate-500 gap-x-4">
+      <div className=" w-full min-h-[150px] flex items-center bg-slate-100 gap-x-4">
         <Link to={`/product/${id}`}>
           <img className="max-w-[80px]" src={image} alt="" />
         </Link>
-        <div>
-        <div className="mb-2 flex justify-between items-center">
-        <Link
-          to={`/product/${id}`}
-          className=" text-sm uppercase font-medium max-w-[240px]
+        {/* info for product */}
+        <div className=" w-full flex flex-col ">
+          <div className="mb-2 flex justify-between items-center">
+            <Link
+              to={`/product/${id}`}
+              className=" text-sm uppercase font-medium max-w-[240px]
          text-primary hover:underline "
-        >
-          {title}
-        </Link>
-        <div>
-          <IoMdClose className=" cursor-pointer text-gray-500 hover:text-red-500 transition"/>
+            >
+              {title}
+            </Link>
+            <div className="text-xl cursor-pointer  ">
+              <IoMdClose className=" text-gray-500 hover:text-red-500 transition" />
+            </div>
+          </div>
+         <div>
+           {/* qty*/}
+
+         </div>
         </div>
       </div>
-
-
-        </div>
-      </div>
-     
     </div>
   );
 };
