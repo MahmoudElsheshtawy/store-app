@@ -7,3 +7,16 @@
     @apply font-primary text-primary;
   }
 } */
+*{
+  scroll-snap-align:start;
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar{
+  background: none;
+  width: 7px;
+  border-radius: 30px;
+}
+::-webkit-scrollbar-thumb{
+  background-color:rgb(134, 133, 133);
+  width: 10px;
+}

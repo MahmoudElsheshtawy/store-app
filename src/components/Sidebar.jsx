@@ -16,7 +16,7 @@ const Sidebar = () => {
         open ? "right-0" : "-right-full"
       } w-full bg-white fixed top-0 h-full
     shadow-2xl md:w-[43vw] xl:max-w-[33vw] transition-all duration-200
-    z-20 px-2  lg:px-[38px] overflow-scroll
+    z-20 px-2  lg:px-[38px] 
   `}
     >
       <div className="flex  items-center justify-between py-6 border-b">
@@ -30,7 +30,7 @@ const Sidebar = () => {
           <IoMdArrowForward />
         </div>
       </div>
-      <div className=" bg-slate-400 flex flex-col gap-y-2 h-[520px] lg:h-[640px] overflow-y-auto overflow-x-hidden border-b">
+      <div className="  flex flex-col gap-y-2 h-[520px] lg:h-[640px] overflow-y-auto overflow-x-hidden border-b">
         {cart.map((item) => {
           return <CartItem key={item.id} item={item} />;
         })}
@@ -38,7 +38,7 @@ const Sidebar = () => {
       {/* =========Total======= */}
       <div className="bg-slate-300 flex justify-between w-full items-center ">
          <div>
-          <div><span>Total:</span>{totalPrice}</div>
+          <div><span>Total:</span>${parseFloat(totalPrice).toFixed(2)}</div>
          </div>
           
           <div onClick={removeCart} className=" cursor-pointer py-4 bg-red-500 text-white w-12 h-12 flex justify-center items-center text-xl ">
