@@ -9,6 +9,7 @@ const [open , setOpen] = useState(false);
 const handleClose =()=>{
   setOpen(false);
 }
+
   return(
     <SidebarContext.Provider value={{open,setOpen,handleClose}}>
       {children}

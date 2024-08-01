@@ -1,15 +1,19 @@
 // import { IoMdClose } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { IoMdAdd, IoMdClose, IoMdRemove } from "react-icons/io";
+import { cartContext } from "../contexts/CartContext";
+import { useContext } from "react";
 // eslint-disable-next-line react/prop-types
-const CartItem = ({ item }) => {
+const CartItem = ({ item, }) => {
   const { id, title, price, amount, image } = item;
+
+  const {removeItem,increaseItem,decreaseItem}= useContext(cartContext)
   return (
-    <div className=" flex  ">
+    <div className="  flex gap-x-4 py-1 lg:px-6 border-b border-gray-200 w-full text-gray-500 ">
       {/* img */}
-      <div className=" w-full min-h-[150px] flex items-center bg-slate-100 gap-x-4">
+      <div className=" w-full min-h-[120px] flex items-center  gap-x-4">
         <Link to={`/product/${id}`}>
-          <img className="max-w-[80px]" src={image} alt="" />
+          <img className="max-w-[70px]" src={image} alt="" />
         </Link>
         {/*======= info for product===== */}
         <div className=" w-full flex flex-col ">
@@ -22,7 +26,7 @@ const CartItem = ({ item }) => {
               {title}
             </Link>
             <div className="text-xl cursor-pointer  ">
-              <IoMdClose className=" text-gray-500 hover:text-red-500 transition" />
+              <IoMdClose onClick={()=>removeItem(id)} className=" text-gray-500 hover:text-red-500 transition" />
             </div>
            
           </div>
@@ -32,11 +36,11 @@ const CartItem = ({ item }) => {
           <div className=" flex gap-x-2 h-[36px] text-sm">
            {/* quty */}
            <div className="flex flex-1 max-w-[100px] items-center h-full border text-primary font-medium">
-            <div className="flex-1 cursor-pointer  flex items-center justify-center px-2"><IoMdRemove/></div>
+            <div onClick={()=>decreaseItem(id)}  className="flex-1 cursor-pointer  flex items-center justify-center px-2"><IoMdRemove/></div>
 
               <div className="h-full flex items-center justify-center px-2">{amount}</div>
 
-              <div className="flex-1 cursor-pointer h-full flex items-center justify-center px-2"><IoMdAdd/></div>
+              <div onClick={()=>increaseItem(id)} className="flex-1 cursor-pointer h-full flex items-center justify-center px-2"><IoMdAdd/></div>
 
            </div>
            {/* quty */}
@@ -46,6 +50,8 @@ const CartItem = ({ item }) => {
 
           </div>
           {/* ==========qty============ */}
+
+
         </div>
       </div>
     </div>
