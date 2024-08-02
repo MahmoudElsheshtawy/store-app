@@ -7,7 +7,7 @@ import { cartContext } from "../contexts/CartContext";
 import CartItem from "../components/CartItem";
 import { FiTrash2 } from "react-icons/fi";
 const Sidebar = () => {
-  const { cart,removeCart ,totalPrice} = useContext(cartContext);
+  const { cart,removeCart ,totalPrice,itemAmount} = useContext(cartContext);
   // console.log(cart);
   const { open, handleClose } = useContext(SidebarContext);
   return (
@@ -20,7 +20,7 @@ const Sidebar = () => {
   `}
     >
       <div className="flex  items-center justify-between py-6 border-b">
-        <div className="uppercase text-sm font-semibold">Shopping Bag (`${cart.amount}`)</div>
+        <div className="uppercase text-sm font-semibold">Shopping Bag ({itemAmount})</div>
         <div
           onClick={handleClose}
           className="
