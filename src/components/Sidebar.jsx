@@ -36,7 +36,7 @@ const Sidebar = () => {
         })}
       </div>
       {/* =========Total======= */}
-      <div className="bg-slate-300 flex justify-between w-full items-center ">
+      <div className="bg-slate-100 flex justify-between w-full items-center ">
          <div>
           <div><span>Total:</span>${parseFloat(totalPrice).toFixed(2)}</div>
          </div>
