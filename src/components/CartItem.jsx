@@ -5,6 +5,7 @@ import { cartContext } from "../contexts/CartContext";
 import { useContext } from "react";
 // eslint-disable-next-line react/prop-types
 const CartItem = ({ item, }) => {
+  // eslint-disable-next-line react/prop-types
   const { id, title, price, amount, image } = item;
 
   const {removeItem,increaseItem,decreaseItem}= useContext(cartContext)

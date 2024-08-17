@@ -3,7 +3,10 @@ import { createContext, useEffect, useState } from "react";
 export const cartContext = createContext();
 // eslint-disable-next-line react/prop-types
 const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
+  const initialvalue = localStorage.getItem("shoppingcart")
+  ? JSON.parse(localStorage.getItem("shoppingcart"))
+  : [];
+  const [cart, setCart] = useState(initialvalue);
 // count pages in cart
 const [itemAmount, setItemAmount ]= useState(0)
 // total price of cart
@@ -87,6 +90,12 @@ if(cart){
       removeItem(id);
     }
   };
+ 
+  
+  useEffect(() => {
+    //create local
+    localStorage.setItem("shoppingcart", JSON.stringify(cart));
+  }, [cart]);
   return (
     <cartContext.Provider
       value={{
